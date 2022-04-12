@@ -1,6 +1,5 @@
-FROM ubuntu
-
-RUN apt-get update
-RUN apt-get install -y apache2
-
+FROM node:latest
+RUN npm install
+EXPOSE 3000
+CMD [ "npm","start" ]
 
