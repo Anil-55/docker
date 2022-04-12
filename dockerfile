@@ -1,5 +1,6 @@
-FROM ubuntu:latest
-RUN apt -get update 
-apt -get  install -y apache2
-EXPOSE  80
-CMD [“usr/sbin/apache2”, “-D” , “FOREGROUND”]
+FROM node:latest
+WORKDIR /usr/src/app
+COPY nodeapp/* /
+RUN npm install
+EXPOSE 3000
+CMD [ "npm","start" ]
